@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ylim0\\Desktop\\Fall 2026!!\\CSE 325\\week4\\ConnectFour\\ConnectFour.csproj": {}
+    "C:\\Users\\ylim0\\Desktop\\Fall 2026\\CSE-325\\week4\\CSE325-Connect4\\ConnectFour\\ConnectFour.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ylim0\\Desktop\\Fall 2026!!\\CSE 325\\week4\\ConnectFour\\ConnectFour.csproj": {
+    "C:\\Users\\ylim0\\Desktop\\Fall 2026\\CSE-325\\week4\\CSE325-Connect4\\ConnectFour\\ConnectFour.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ylim0\\Desktop\\Fall 2026!!\\CSE 325\\week4\\ConnectFour\\ConnectFour.csproj",
+        "projectUniqueName": "C:\\Users\\ylim0\\Desktop\\Fall 2026\\CSE-325\\week4\\CSE325-Connect4\\ConnectFour\\ConnectFour.csproj",
         "projectName": "ConnectFour",
-        "projectPath": "C:\\Users\\ylim0\\Desktop\\Fall 2026!!\\CSE 325\\week4\\ConnectFour\\ConnectFour.csproj",
+        "projectPath": "C:\\Users\\ylim0\\Desktop\\Fall 2026\\CSE-325\\week4\\CSE325-Connect4\\ConnectFour\\ConnectFour.csproj",
         "packagesPath": "C:\\Users\\ylim0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ylim0\\Desktop\\Fall 2026!!\\CSE 325\\week4\\ConnectFour\\obj\\",
+        "outputPath": "C:\\Users\\ylim0\\Desktop\\Fall 2026\\CSE-325\\week4\\CSE325-Connect4\\ConnectFour\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ylim0\\AppData\\Roaming\\NuGet\\NuGet.Config"
