@@ -1,13 +1,20 @@
-@inject GameState State 
+@using System.Drawing
+@inject GameState State
 
 <HeadContent>
     <style>
             :root {
-                --board-bg: yellow;
+                --board-bg:
+                    @ColorTranslator.ToHtml(BoardColor)
+                ;
                 /** the color of the board **/
-                --player1: red;
+                --player1:
+                    @ColorTranslator.ToHtml(Player1Color)
+                ;
                 /** Player 1's piece color **/
-                --player2: blue;
+                --player2:
+                    @ColorTranslator.ToHtml(Player2Color)
+                ;
                 /** Player 2's piece color **/
             }
     </style>
@@ -30,12 +37,12 @@
 
 <div>
     <div class="board">
-    @for (var i = 0; i < 42; i++)
-    {
-        <span class="container">
-            <span></span>
-        </span>
-    }
+        @for (var i = 0; i < 42; i++)
+        {
+            <span class="container">
+                <span></span>
+            </span>
+        }
     </div>
     @for (var i = 0; i < 42; i++)
     {
@@ -44,24 +51,36 @@
 </div>
 
 @code {
+    [Parameter]
+    public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
+
+    [Parameter]
+    public Color Player1Color { get; set; } = ColorTranslator.FromHtml("red");
+
+    [Parameter]
+    public Color Player2Color { get; set; } = ColorTranslator.FromHtml("blue");
     private string[] pieces = new string[42];
     private string winnerMessage = string.Empty;
     private string errorMessage = string.Empty;
     private string ResetStyle => (winnerMessage == string.Empty) ? "display: none;" : "";
 
-    private void PlayPiece(byte col) {
+    private void PlayPiece(byte col)
+    {
         errorMessage = string.Empty;
-        try {
+        try
+        {
             var player = State.PlayerTurn;
             var landingRow = State.PlayPiece(col);
             var turn = State.CurrentTurn - 1;
             pieces[turn] = $"player{player} col{col} drop{landingRow}";
         }
-        catch (ArgumentException ex) {
+        catch (ArgumentException ex)
+        {
             errorMessage = ex.Message;
         }
 
-        winnerMessage = State.CheckForWin() switch {
+        winnerMessage = State.CheckForWin() switch
+        {
             GameState.WinState.Player1_Wins => "Player 1 Wins!",
             GameState.WinState.Player2_Wins => "Player 2 Wins!",
             GameState.WinState.Tie => "It's a tie!",

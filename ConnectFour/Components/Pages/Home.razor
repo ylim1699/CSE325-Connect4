@@ -1,6 +1,31 @@
 ﻿@page "/"
+@rendermode InteractiveServer
+@using System.Drawing
 
 <PageTitle>Index</PageTitle>
-<Board @rendermode="InteractiveServer" />
+
+<div>
+    <label>Player1 Color: </label>
+    <select @bind="player1ColorInput">
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+    </select>
+
+    <select @bind="player2ColorInput">
+        <option value="orange">Orange</option>
+        <option value="red">Red</option>
+        <option value="brown">Brown</option>
+    </select>
+
+</div>
+
+<Board BoardColor="Color.Yellow" Player1Color="Color.FromName(player1ColorInput)"
+       Player2Color="Color.FromName(player2ColorInput)" />
+
+@code {
+    private string player1ColorInput = "green";
+    private string player2ColorInput = "orange";
+}
 
 
